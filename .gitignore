@@ -1,0 +1,28 @@
+# Ignore .NET build files
+bin/
+obj/
+
+# Ignore user-specific files
+*.user
+*.suo
+*.vs
+.vscode/
+
+# Ignore package dependencies
+packages/
+project.lock.json
+
+# Ignore IDE settings
+.idea/
+*.sln.iml
+*.csproj.user
+
+# Ignore compiled files
+*.dll
+*.exe
+*.pdb
+
+# Ignore logs and temporary files
+*.log
+*.cache
+*.pid

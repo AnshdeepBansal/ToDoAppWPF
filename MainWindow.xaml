@@ -1,0 +1,34 @@
+﻿<Window x:Class="ToDoAppWPF.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="To-Do List" Height="350" Width="400" WindowStartupLocation="CenterScreen">
+    
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <!-- TextBox to enter new task -->
+        <TextBox Name="txtTask" Width="250" Height="30" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        
+        <!-- Add Task Button -->
+        <Button Content="Add" Width="80" Height="30" HorizontalAlignment="Right" Click="AddTask_Click"/>
+        
+        <!-- ListBox to display tasks -->
+        <ListBox Name="taskListBox" Grid.Row="1" Margin="0,10,0,10">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal">
+                        <CheckBox IsChecked="{Binding IsCompleted}" Margin="5"/>
+                        <TextBlock Text="{Binding Name}" VerticalAlignment="Center"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        
+        <!-- Remove Task Button -->
+        <Button Content="Remove" Width="100" Height="30" Grid.Row="2" Click="RemoveTask_Click"/>
+    </Grid>
+</Window>
